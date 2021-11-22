@@ -12,6 +12,7 @@ pipeline{
 
 			steps {
 				git 'https://github.com/shazforiot/nodeapp_test.git'
+				sh '/usr/bin/docker'
 			}
 		}
 
