@@ -11,20 +11,12 @@ pipeline{
 
 	stages {
 	
-	stages ('docker path') {
-	 
-	 steps {
-	 sh '/usr/bin/docker '
-	 
-	 }
-	 
-	 }
-	 
 	    
-	    stage('gitclone') {
+	  stage('gitclone') {
 
 			steps {
 				git 'https://github.com/shazforiot/nodeapp_test.git'
+				sh '/usr/bin/docker '
 				
 			}
 		}
