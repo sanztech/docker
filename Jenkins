@@ -4,6 +4,8 @@ pipeline{
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	
+                sh '/usr/bin/docker'
 	}
 
 	stages {
@@ -12,7 +14,7 @@ pipeline{
 
 			steps {
 				git 'https://github.com/shazforiot/nodeapp_test.git'
-				sh '/usr/bin/docker'
+				
 			}
 		}
 
