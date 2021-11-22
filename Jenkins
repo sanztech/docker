@@ -5,10 +5,21 @@ pipeline{
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	
-                sh '/usr/bin/docker'
 	}
+	
+	
 
 	stages {
+	
+	stages ('docker path') {
+	 
+	 steps {
+	 sh '/usr/bin/docker '
+	 
+	 }
+	 
+	 }
+	 
 	    
 	    stage('gitclone') {
 
