@@ -3,7 +3,7 @@ pipeline{
 	agent {label 'maven'}
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+		DOCKERHUB_CREDENTIALS=credentials('myashu8')
 	
 	}
 	
@@ -24,7 +24,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t myimage:latest .'
+				sh ' /usr/bin/docker build -t myashu8/demo:latest .'
 			}
 		}
 
@@ -38,7 +38,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push thetips4you/nodeapp_test:latest'
+				sh 'docker push myashu8/demo:latest'
 			}
 		}
 	}
